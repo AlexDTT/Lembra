@@ -1,0 +1,38 @@
+export const homePt = {
+  homeOverview: 'A sua rotina num relance',
+  homeTasks: 'Tarefas a tratar',
+  homeTasksHelp: 'Para hoje ou em atraso',
+  homeDoses: 'Tomas por registar',
+  homeDosesHelp: 'Na rotina de hoje',
+  homeBills: 'Contas por pagar',
+  homeBillsHelp: 'Em atraso ou nos próximos 7 dias',
+  homeSpending: 'Gasto este mês',
+  homeUpcoming: 'Nos próximos 7 dias',
+  homeUpcomingHelp: 'Compromissos e tarefas depois de hoje.',
+  homeUpcomingEmpty:
+    'Ainda não tem compromissos ou tarefas agendados para estes dias.',
+  homeUnscheduled: 'Tarefas sem data',
+  homeUnscheduledHelp: 'Para tratar quando lhe der jeito.',
+  homeUnavailable: 'Não foi possível carregar este resumo.',
+  homeAdd: 'Adicionar à rotina',
+  homeSeeCalendar: 'Ver calendário',
+};
+export const homeEn: typeof homePt = {
+  homeOverview: 'Your routine at a glance',
+  homeTasks: 'Tasks needing attention',
+  homeTasksHelp: 'Due today or overdue',
+  homeDoses: 'Doses to record',
+  homeDosesHelp: 'In today’s routine',
+  homeBills: 'Unpaid bills',
+  homeBillsHelp: 'Overdue or in the next 7 days',
+  homeSpending: 'Spent this month',
+  homeUpcoming: 'In the next 7 days',
+  homeUpcomingHelp: 'Appointments and tasks after today.',
+  homeUpcomingEmpty:
+    'You have no appointments or tasks scheduled for these days yet.',
+  homeUnscheduled: 'Tasks without a date',
+  homeUnscheduledHelp: 'To handle when it suits you.',
+  homeUnavailable: 'Could not load this summary.',
+  homeAdd: 'Add to your routine',
+  homeSeeCalendar: 'View calendar',
+};

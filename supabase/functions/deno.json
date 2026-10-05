@@ -1,0 +1,6 @@
+{
+  "imports": {
+    "rrule": "./_shared/rrule-compat.ts",
+    "date-fns-tz": "npm:date-fns-tz@3.2.0"
+  }
+}
