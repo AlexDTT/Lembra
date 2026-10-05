@@ -1,0 +1,9 @@
+{
+  "name": "lembra",
+  "compatibility_date": "2026-10-05",
+  "assets": {
+    "directory": "./dist",
+    "not_found_handling": "single-page-application",
+    "html_handling": "none",
+  },
+}

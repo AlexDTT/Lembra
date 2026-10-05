@@ -466,7 +466,8 @@ Set the repository variable `ENABLE_DATABASE_BACKUPS=true` only in the private r
 
 ## 15. Deployment
 
-- **Frontend:** connect the GitHub repo to Cloudflare Pages. Build command `pnpm build`, output directory `dist`. Set the three `VITE_` variables. Add a `_redirects` rule so all routes serve `index.html` (single-page app).
+- **Frontend (Pages):** connect the GitHub repo to Cloudflare Pages. Build command `pnpm build`, output directory `dist`. Set the three `VITE_` variables and `NODE_VERSION=22`. Pages automatically serves `index.html` for client-side routes when no top-level `404.html` exists; no `_redirects` file is needed.
+- **Frontend (Workers):** the included `wrangler.jsonc` serves the same `dist` directory using Workers Static Assets with single-page application fallback. Set the build command to `pnpm build` and the deploy command to `pnpm dlx wrangler deploy`. Configure the three `VITE_` variables for the build, plus `NODE_VERSION=22`. No Worker script is needed. The `_headers` file supplies the response headers for both hosting options.
 - **Database and functions:** deploy with the Supabase CLI (`supabase db push`, `supabase functions deploy`). Migrations live in git and are the only way schema changes are made.
 - **Environments:** one production project is enough. For safer development, optionally create a second free Supabase project for staging.
 
@@ -577,7 +578,7 @@ supabase functions deploy send-reminders
 supabase functions deploy test-reminder
 ```
 
-Then publish the updated frontend through the your Cloudflare Pages deployment. Migration `0007_daily_care.sql` adds medication options, appointment exclusions, owner-scoped snoozes and selective family sharing. No new service or secret is required. Until the migration is applied, the frontend keeps ordinary medication, appointment, bill and money flows usable; optional features show an activation message, single-occurrence changes and additional reminders are disabled, and data export tolerates absent optional tables. Complete an actual Android test with Lembra closed, verify a Google Calendar alarm, and confirm a Lembra test notification. Local mocked browser tests cannot establish real phone delivery.
+Then publish the updated frontend through your Cloudflare deployment. Migration `0007_daily_care.sql` adds medication options, appointment exclusions, owner-scoped snoozes and selective family sharing. No new service or secret is required. Until the migration is applied, the frontend keeps ordinary medication, appointment, bill and money flows usable; optional features show an activation message, single-occurrence changes and additional reminders are disabled, and data export tolerates absent optional tables. Complete an actual Android test with Lembra closed, verify a Google Calendar alarm, and confirm a Lembra test notification. Local mocked browser tests cannot establish real phone delivery.
 
 ## 18. Testing
 
